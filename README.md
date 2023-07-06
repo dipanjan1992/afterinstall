@@ -1,2 +1,2 @@
-# afterinstall
-Just a guide for myself
+# After installing guide
+This is just for myself
