@@ -1,2 +1,2 @@
-# After installing guide
+# After installation guide
 This is just for myself
