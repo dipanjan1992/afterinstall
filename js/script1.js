@@ -30,3 +30,12 @@ function showSlides(n) {
   slides[slideIndex - 1].style.display = "block";
   dots[slideIndex - 1].className += " active";
 }
+
+// Event listeners for keyboard arrow keys
+document.addEventListener("keydown", function (event) {
+  if (event.key === "ArrowLeft") {
+    plusSlides(-1); // Show previous slide
+  } else if (event.key === "ArrowRight") {
+    plusSlides(1); // Show next slide
+  }
+});
