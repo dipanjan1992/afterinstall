@@ -1,0 +1,203 @@
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>EndeavourOS After Installaion</title>
+        <link rel="stylesheet" href="css/styles.css" />
+    </head>
+
+    <body>
+        <div class="grid-container">
+            <header>
+                <div id="menu">
+                    <div id="menu-bar" onclick="menuOnClick()">
+                        <div id="bar1" class="bar"></div>
+                        <div id="bar2" class="bar"></div>
+                        <div id="bar3" class="bar"></div>
+                    </div>
+                    <nav class="nav" id="nav">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="https://endeavouros.com/" target="_blank">About</a></li>
+                            <li><a href="pictures.html" target="_blank">Screenshots</a></li>
+                            <li><a href="https://wiki.archlinux.org/" target="_blank">Arch Wiki</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="menu-bg" id="menu-bg"></div>
+                <h1>EndeavourOS</h1>
+                <label class="switch">
+                    <span class="toggle-label">Dark Mode</span> <!-- /* Added light for light mode*/ -->
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="darkModeToggle" />
+                        <span class="toggle-slider"></span>
+                    </label>
+                </label>
+            </header>
+            <nav class="cat">
+                <p>Categories</p>
+                <li><a href="#apps">Lists of Apps to install</a></li>
+                <li><a href="#extensions">Extensions to install</a></li>
+                <li><a href="#jupyter">Setting up Jupyter Notebook and Jupyter Lab</a></li>
+                <li><a href="#fonts">Microsoft Windows Fonts</a></li>
+            </nav>
+            <article>
+                <h2>Setting up EndeavourOS Gnome desktop environment fresh install</h2>
+                <img src="img/Gnome.png" alt="article banner" />
+                <p>
+                    If installing EndeavourOS skip the installation of ufw firewall or if it has been installed then
+                    uninstall ufw if you will be using Portmaster, the command is <code>pacman -Rs ufw</code>. After
+                    going through the welcome prompt go to the <a href="https://flathub.org/en">flathub website</a> and
+                    install flatpak for EndeavourOS, install
+                    font downloader. While it is downloading open the terminal
+                    and search for 'yay -S gnome-software' and also install 'yay -S gnome-tweaks'. When font downloader
+                    has
+                    completed its installation process install the ubuntu font and apply it with gnome tweaks and make
+                    sure to set anti aliasing.
+                </p>
+                <ul>
+                    <h1 id="apps">List of Apps to install</h1>
+                    <li>Clocks</li>
+                    <li>Droid Cam</li>
+                    <li>Extension Manager</li>
+                    <li>Free Download Manager</li>
+                    <li>Sound Recorder</li>
+                    <li>Fragments</li>
+                    <li>Obs Studio Bin</li>
+                    <li>Btop++</li>
+                    <li>nvtop</li>
+                    <li>Port Master</li>
+                    <li>Calendar</li>
+                    <li>Collision</li>
+                    <li>Curtail</li>
+                    <li>Drawing</li>
+                    <li>Eye Dropper</li>
+                    <li>Mousai</li>
+                    <li>Console</li>
+                    <li>G4 Music</li>
+                    <li>AdwSteamGTK</li>
+                    <li>Flatseal</li>
+                    <li>Brave-bin</li>
+                    <li>MS Edge-bin</li>
+                    <li>Cider</li>
+                    <li>Stacer</li>
+                    <li>Clapper (only for wayland session, crashes on x11)</li>
+                    <li>Celluloid (for x11 session)</li>
+                    <li>Mambaforge -Github</li>
+                    <li>Only Office</li>
+                    <li>Weather</li>
+                    <li>ProtonUp-QT</li>
+                    <li>Font Manager</li>
+                    <li>Smile</li>
+                    <li>Zoom</li>
+                    <li>Easy Effects</li>
+                    <li>Rclone & Rclone browser</li>
+                </ul>
+                <ul>
+                    <h1 id="extensions">Extensions to install</h1>
+                    <li>Appindicator & KStatus</li>
+                    <li>Blur My Shell</li>
+                    <li>Clipboard Indicator</li>
+                    <li>GSConnect</li>
+                    <li>Just Perfection</li>
+                    <li>Night Theme Switcher</li>
+                    <li>Panel Corner</li>
+                    <li>Quick Settings Audio devices hider</li>
+                    <li>Removable drive menu</li>
+                    <li>User Themes</li>
+                </ul>
+                <h1 id="jupyter">Setting up Jupyter Notebook and Jupyter Lab</h1>
+                <p>
+                    Fire up the terminal and type
+                <p>
+                <pre><code>nano ~/. bashrc</code></pre>
+                </p>
+                <p>Then set the alias</p>
+                <p>
+                    <code>jn='conda activate && jupyter notebook'</code>
+                <p></p>
+                <code>jl='conda activate && jupyter lab'</code>
+                <p></p>
+                <code>ca='conda activate'</code>
+                </p>
+                Now for setting the default browser for jupyter notebook and jupyter lab:
+                <p><b>1. Create a Jupyter Notebook Config file</b></p>
+                <p>
+                <pre><code>jupyter notebook --generate-config</code></pre>
+                </p>
+                <p>Then open the config file. If you used the default location for the file it would be in:</p>
+                <p>
+                <pre><code>./jupyter/jupyter_notebook_config.py</code></pre>
+                </p>
+                <b>2. Search for browser configuration</b>
+                <p>Search for following word to change your Juypter Notebook launch browser.</p>
+                <p>
+                <pre><code>c.NotebookApp.browser</code></pre>
+                </p>
+                <p><b>3. Find your browser path </b>For this example I will be using microsoft edge</p>
+                <p>
+                <pre><code>which microsoft-edge</code></pre>
+                </p>
+                <p>The output will be:</p>
+                <pre><code>/usr/bin/microsoft-edge</code></pre>
+                <p><b>4. Set the launch browser in Jupyter Notebook</b></p>
+                <p>Paste the path from above and add %s in the end and remove #(uncomment) the line and save it.</p>
+                <pre><code>c.NotebookApp.browser = '/usr/bin/microsoft-edge %s'</code></pre>
+                </p>
+                <h1 id="fonts">Microsoft Windows Fonts</h1>
+                <p>Copy the Windows Fonts to <code>/usr/local/share/fonts/:</code></p>
+                <p>
+                    <code>sudo mkdir /usr/local/share/fonts</code>
+                <p></p>
+                <code>sudo mkdir /usr/local/share/fonts/WindowsFonts</code>
+                <p></p>
+                <code>sudo cp /windows/Windows/Fonts/* /usr/local/share/fonts/WindowsFonts/</code>
+                <p></p>
+                <code>fc-cache --force</code>
+                <p></p>
+                <code>fc-cache-32 --force</code>
+                </p>
+                <h3>Rule mapping for similar fonts</h3>
+                <p>
+                    Often websites specify the fonts using generic names (helvetica, courier, times or times new roman)
+                    and a rule in
+                    fontconfig maps these names to free fonts (Liberation, Google CrOS, GUST TeX Gyre...). The
+                    substitutions are defined in
+                    <code>/etc/fonts/conf.d/30-metric-aliases.conf</code>.
+                </p>
+                <p>
+                    To make full use of the Ms Windows fonts it is necessary to create a rule mapping those generic
+                    names to the Ms Windows
+                    specific fonts contained in the various packages above:
+                <p>Copy the contents or replace from this <a href="assets/30-metric-aliases.conf">file</a> and paste it
+                    in the above mentioned configuration file. Sudo access will be needed so, it must be done through
+                    terminal. More information about this can be found <a href="https://wiki.archlinux.org/title/Microsoft_fonts">here</a>.
+                </p>
+                </p>
+            </article>
+            <aside>
+                <ul>
+                    <li>
+                        <p><strong>Published on:</strong></p>
+                        <p>July 6th 2023</p>
+                    </li>
+                    <li>
+                        <p><strong>In the category:</strong></p>
+                        <p>Operating System</p>
+                    </li>
+                    <li>
+                        <p><strong>Written by:</strong></p>
+                        <p>Dipanjan</p>
+                    </li>
+                </ul>
+            </aside>
+            <footer>
+                <p>©️ 2023 Dipanjan Pal Chowdhury</p>
+            </footer>
+        </div>
+    </body>
+    <script src="js/script.js"></script>
+
+</html>
